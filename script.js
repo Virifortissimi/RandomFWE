@@ -129,7 +129,7 @@ function generateRandomData() {
         document.getElementById('randomData').style.display = 'none';
 
         // Random delay between 2 and 5 seconds
-        const delay = Math.floor(Math.random() * 3000) + 2000;
+        const delay = Math.floor(Math.random() * 500) + 500;
 
         setTimeout(function () {
             const categoryKeys = Object.keys(data);
