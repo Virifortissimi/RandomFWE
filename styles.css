@@ -7,12 +7,14 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #a2c2e2, #f0f0f0);
+    background: linear-gradient(135deg, #a0d2eb, #f7e7a4);
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 .container {
-    background: white;
-    border-radius: 10px;
+    background: #ffffff;
+    border-radius: 0; /* Squared edges */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     max-width: 600px;
@@ -23,14 +25,18 @@ body {
 }
 
 button {
-    padding: 15px 25px;
+    padding: 15px;
     font-size: 18px;
     cursor: pointer;
     border: none;
     background: #007bff;
     color: white;
-    border-radius: 8px;
+    border-radius: 0; /* Squared edges */
     transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    width: 100%; /* Full-width button on mobile */
+    max-width: 300px;
+    margin: 0 auto; /* Center the button */
+    text-align: center;
 }
 
 button:hover {
@@ -48,23 +54,26 @@ button:active {
     margin-top: 20px;
     font-size: 20px;
     line-height: 1.5;
-    color: #333;
-    border: 1px solid #ddd;
+    color: #333; 
     padding: 15px;
-    border-radius: 8px;
-    background: #fafafa;
+    border-radius: 0; /* Squared edges */
+    background: #e6f7ff; /* Light blue background */
     display: none; /* Hide randomData initially */
 }
 
 #loader {
     display: none; /* Hide loader initially */
-    border: 8px solid #f3f3f3;
+    border: 5px solid #f3f3f3;
     border-radius: 50%;
-    border-top: 8px solid #007bff;
+    border-top: 5px solid #007bff;
     width: 50px;
     height: 50px;
     animation: spin 1s linear infinite;
-    margin-bottom: 20px;
+    margin: 20px auto; /* Center the loader */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 @keyframes spin {
@@ -76,8 +85,47 @@ footer {
     margin-top: 30px;
     font-size: 14px;
     color: #555;
-    position: absolute;
-    bottom: 10px;
     text-align: center;
     width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background: #f0f0f0;
+    border-radius: 0; /* Squared edges */
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        width: 100%;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    #randomData {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0 5px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #randomData {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
 }

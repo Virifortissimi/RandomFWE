@@ -1,7 +1,10 @@
 // script.js
 document.getElementById('generateBtn').addEventListener('click', function () {
+    console.log("Click 1");
     const randomData = generateRandomData();
+    console.log("Click 2");
     document.getElementById('randomData').textContent = randomData;
+    console.log("Click 3");
 });
 
 function generateRandomData() {
