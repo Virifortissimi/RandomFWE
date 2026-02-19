@@ -1,20 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Family Worship Ideas Generator</title>
+    <title>Family Worship Ideas</title>
+    <!-- Modern Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class="container">
-        <button id="generateBtn">Click for next Idea...</button>
-        <div id="loader" class="loader"></div>
-        <p id="randomData">Click the button to generate random data!</p>
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
     </div>
+    <main class="container">
+        <div class="top-controls">
+            <div class="sound-control">
+                <label class="switch">
+                    <input type="checkbox" id="soundToggle" checked>
+                    <span class="slider round"></span>
+                </label>
+                <span class="sound-label">Sound</span>
+            </div>
+            <button id="openFavoritesBtn" class="icon-btn-large" title="Favorites & Badges">🌟</button>
+        </div>
+
+        <div class="gamification-header">
+            <div class="streak-box">🔥 <span id="streakCount">0</span> Day Streak</div>
+            <div class="level-badge" id="levelName">Level 1: Beginner</div>
+        </div>
+
+        <header>
+            <h1>Family Worship</h1>
+            <div class="xp-container">
+                <div class="xp-bar-bg">
+                    <div id="xpBarFill" class="xp-bar-fill" style="width: 0%"></div>
+                </div>
+                <span class="xp-text">XP: <span id="currentXp">0</span> / <span id="nextLevelXp">100</span></span>
+            </div>
+        </header>
+
+        <div class="card">
+            <button id="generateBtn" class="primary-btn">Next Suggestion</button>
+            <div id="loader" class="loader"></div>
+            <div id="randomData" class="suggestion-box">
+                <!-- Content will be injected here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Sidebar Drawer -->
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h2>Your Journey</h2>
+            <button id="closeSidebarBtn" class="close-btn">&times;</button>
+        </div>
+
+        <div class="sidebar-tabs">
+            <button class="tab-btn active" data-tab="favorites">Favorites</button>
+            <button class="tab-btn" data-tab="badges">Badges</button>
+        </div>
+
+        <div id="favoritesTab" class="tab-content active">
+            <div id="favoritesList" class="favorites-list">
+                <p class="empty-msg">No favorites yet. Tap the ❤️ on an idea!</p>
+            </div>
+        </div>
+
+        <div id="badgesTab" class="tab-content">
+            <div id="badgesList" class="badges-grid">
+                <!-- Badges will be injected here -->
+            </div>
+        </div>
+    </div>
+    <div id="overlay" class="overlay"></div>
+
+    <canvas id="confetti" class="confetti-canvas"></canvas>
+
     <footer>
-        <strong>Created by codease - &#169; 2024 - Family Worship Ideas.</strong>
+        <p>&copy; 2024 Family Worship Ideas • Crafted with care</p>
     </footer>
     <script src="script.js"></script>
 </body>
+
 </html>
